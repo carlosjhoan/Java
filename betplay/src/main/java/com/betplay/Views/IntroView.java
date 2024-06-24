@@ -3,6 +3,8 @@ package com.betplay.Views;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import com.betplay.Controller;
+
 public class IntroView {
 
     public IntroView() {
@@ -62,6 +64,8 @@ public class IntroView {
 
             default:
                 System.out.println("\nCHAO!");
+                Controller.getController().controller.put("001", null);
+                System.out.println(Controller.getController());
                 break;
         }
 

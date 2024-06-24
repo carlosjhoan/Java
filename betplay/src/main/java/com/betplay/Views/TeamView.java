@@ -3,6 +3,8 @@ package com.betplay.Views;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import com.betplay.model.entity.Team;
+
 public class TeamView {
     public TeamView () {
 
@@ -39,7 +41,26 @@ public class TeamView {
 
         switch (option) {
             case 1:
-                System.out.println("\n>>> Agregar Equipo");
+                String name;
+                int Id;
+                String city;
+                String key;
+                Team myTeam = new Team();
+
+                System.out.println("Código del eqquipo: ");
+                key = sc.nextLine();
+
+                System.out.println("Id del equipo: ");
+                Id = sc.nextInt();
+               
+                System.out.println("Nombre del equipo: ");
+                name = sc.nextLine();
+                
+                System.out.println("Ciudad del equipo: ");
+                city = sc.nextLine();
+               
+                myTeam.set
+
                 System.out.println("\nEquipo agregado exitosamente.\nPresiona una tecla para volver al menú.");
                 sc.next();
                 TeamMenu();
