@@ -29,6 +29,7 @@ public class TeamView {
                 try {
                     System.out.println("\n¿Qué desea realizar?");
                     option = sc.nextInt();
+                    sc.nextLine();
                     validator = false;
                 }
 
@@ -47,18 +48,18 @@ public class TeamView {
                 String city;
                 String key;
                 Team myTeam = new Team();
-                sc.nextLine();
-                System.out.println("Código del equipo: ");
+                
+                System.out.println("\nCódigo del equipo: ");
                 key = sc.nextLine();
 
-                System.out.println("Id del equipo: ");
+                System.out.println("\nId del equipo: ");
                 Id = sc.nextInt();
                 sc.nextLine();
                
-                System.out.println("Nombre del equipo: ");
+                System.out.println("\nNombre del equipo: ");
                 name = sc.nextLine();
                 
-                System.out.println("Ciudad del equipo: ");
+                System.out.println("\nCiudad del equipo: ");
                 city = sc.nextLine();
                
                 myTeam.setId(Id);
@@ -73,8 +74,17 @@ public class TeamView {
                 break;
         
             case 2:
-                System.out.println("\n>>> Eliminar Equipo");
-                System.out.println("\nEquipo eliminado exitosamente.\nPresiona una tecla para volver al menú.");
+                String keyToEliminate;
+                System.out.println("\nCódigo del equipo que desea eliminar: ");
+                keyToEliminate = sc.nextLine();
+                if (Controller.getController().controller.containsKey(keyToEliminate) == true) {
+                    Controller.getController().controller.remove(keyToEliminate);
+                    System.out.println("\nEquipo eliminado exitosamente.\nPresiona una tecla para volver al menú.");
+                }
+                else {
+                    System.out.println("\nNo se ha creado ningún equipo con ese código.");
+                }
+                
                 sc.next();
                 TeamMenu();
                 break;
