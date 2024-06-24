@@ -59,7 +59,7 @@ public class TeamView {
                 System.out.println("Ciudad del equipo: ");
                 city = sc.nextLine();
                
-                myTeam.set
+                
 
                 System.out.println("\nEquipo agregado exitosamente.\nPresiona una tecla para volver al menú.");
                 sc.next();
