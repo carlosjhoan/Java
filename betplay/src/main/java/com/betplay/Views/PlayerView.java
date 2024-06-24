@@ -13,6 +13,7 @@ public class PlayerView {
         Scanner sc = new Scanner(System.in);
         boolean validator = true;
         int option = 0;
+        System.out.println("\n\n_____________________");
         System.out.println("\n  J U G A D O R E S");
         System.out.println("\n= = = = = = = = = = =\n\tMenú\n= = = = = = = = = = =");
         System.out.println("\n1. Agregar jugador");

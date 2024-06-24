@@ -13,6 +13,7 @@ public class CoachView {
         Scanner sc = new Scanner(System.in);
         boolean validator = true;
         int option = 0;
+        System.out.println("\n\n_______________________");
         System.out.println("\nE N T R E N A D O R E S");
         System.out.println("\n= = = = = = = = = = = =\n\t Menú\n= = = = = = = = = = = =");
         System.out.println("\n1. Agregar entrenador");

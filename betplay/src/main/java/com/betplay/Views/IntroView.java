@@ -17,7 +17,8 @@ public class IntroView {
         DoctorView doctorMenu = new DoctorView();
         boolean permise = true;
         int option = 0;
-        System.out.println("\n\n    B E T P L A Y");
+        System.out.println("\n\n_____________________");
+        System.out.println("\n    B E T P L A Y");
         System.out.println("\n= = = = = = = = = = =\n\tMenú\n= = = = = = = = = = =");
         System.out.println("\n1. Equipos");
         System.out.println("\n2. Jugadores");

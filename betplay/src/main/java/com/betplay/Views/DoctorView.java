@@ -14,6 +14,7 @@ public class DoctorView {
         Scanner sc = new Scanner(System.in);
         boolean validator = true;
         int option = 0;
+        System.out.println("\n\n_____________________");
         System.out.println("\n   M É D I C O S");
         System.out.println("\n= = = = = = = = = = =\n\tMenú\n= = = = = = = = = = =");
         System.out.println("\n1. Agregar médico");
