@@ -64,8 +64,8 @@ public class IntroView {
 
             default:
                 System.out.println("\nCHAO!");
-                Controller.getController().controller.put("001", null);
-                System.out.println(Controller.getController());
+                System.out.println(Controller.getController().controller.get("001").getName());
+                System.out.println(Controller.getController().controller.get("001").getCity());
                 break;
         }
 
