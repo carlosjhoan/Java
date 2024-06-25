@@ -3,8 +3,6 @@ package com.betplay.Views;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import com.betplay.Controller;
-
 public class IntroView {
 
     public IntroView() {
@@ -65,8 +63,12 @@ public class IntroView {
             default:
                 System.out.println("\nCHAO!");
                 //Controller.getController().controller.remove("001");
-                /*System.out.println(Controller.getController().controller.get("001").getName());
-                System.out.println(Controller.getController().controller.get("001").getCity());
+                /*System.out.println(Controller.getController().controller.get("001").listPlayers.get(0).getFirstName());
+                System.out.println(Controller.getController().controller.get("001").listPlayers.get(0).getLastName());
+                System.out.println(Controller.getController().controller.get("001").listPlayers.get(0).getAge());
+                System.out.println(Controller.getController().controller.get("001").listPlayers.get(0).getDorsal());
+                System.out.println(Controller.getController().controller.get("001").listPlayers.get(0).getPosition());*/
+                /*System.out.println(Controller.getController().controller.get("001").getCity());
                 System.out.println(Controller.getController().controller.get("001").getListPlayers());*/
                 //System.out.println(Controller.getController().controller.containsKey("001"));
                 break;

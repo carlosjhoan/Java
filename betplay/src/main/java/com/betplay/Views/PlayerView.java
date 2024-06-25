@@ -3,6 +3,9 @@ package com.betplay.Views;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import com.betplay.Controller;
+import com.betplay.model.entity.Player;
+
 public class PlayerView {
     public PlayerView() {
 
@@ -26,6 +29,7 @@ public class PlayerView {
                 try {
                     System.out.println("\n¿Qué desea realizar?");
                     option = sc.nextInt();
+                    sc.nextLine();
                     validator = false;
                 }
 
@@ -39,8 +43,56 @@ public class PlayerView {
 
         switch (option) {
             case 1:
-                System.out.println("\n>>> Agregar Jugador");
-                System.out.println("\nJugador agregado exitosamente.\nPresiona una tecla para volver al menú.");
+                Player myPlayer = new Player();
+                int Id;
+                String firstName;
+                String lastName;
+                int age;
+                int dorsal;
+                String position;
+                String keyTeam;
+                
+                
+                System.out.println("\n> Código del equipo al cual va a pertenecer: ");
+                keyTeam = sc.nextLine();
+                if (Controller.getController().controller.containsKey(keyTeam) == true) {
+                    System.out.println("\n> Id del jugador: ");
+                    Id = sc.nextInt();
+                    sc.nextLine();
+                
+                    System.out.println("\n> Nombres del jugador: ");
+                    firstName = sc.nextLine();
+
+                    System.out.println("\n> Apellidos del jugador: ");
+                    lastName = sc.nextLine();
+
+                    System.out.println("\n> Edad del jugador: ");
+                    age = sc.nextInt();
+                    
+                    System.out.println("\n> Dorsal del jugador: ");
+                    dorsal = sc.nextInt();
+                    sc.nextLine();
+                    
+                    System.out.println("\n> Posición del jugador: ");
+                    position = sc.nextLine();
+
+                    myPlayer.setId(Id);
+                    myPlayer.setFirstName(firstName);
+                    myPlayer.setLastName(lastName);
+                    myPlayer.setAge(age);
+                    myPlayer.setDorsal(dorsal);
+                    myPlayer.setPosition(position);
+                    Controller.getController().controller.get(keyTeam).listPlayers.add(myPlayer);
+                    System.out.println("\n* * * * * * * * * * * * * * * * *");
+                    System.out.println("Jugador agregado exitosamente.\n* * * * * * * * * * * * * * * * *\n\n>>> Presiona una tecla para volver al menú.");
+                }
+
+                else {
+                    System.out.println("\n:: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: ::");
+                    System.out.println("::  No se ha creado ningún equipo con ese código.  ::\n:: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: ::");
+                }
+
+                System.out.println("\n>>> Presiona una tecla para volver al menú.");
                 sc.next();
                 PlayerMenu();
                 break;

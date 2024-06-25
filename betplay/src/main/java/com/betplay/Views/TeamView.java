@@ -49,17 +49,17 @@ public class TeamView {
                 String key;
                 Team myTeam = new Team();
                 
-                System.out.println("\nCódigo del equipo: ");
+                System.out.println("\n> Código del equipo: ");
                 key = sc.nextLine();
 
-                System.out.println("\nId del equipo: ");
+                System.out.println("\n> Id del equipo: ");
                 Id = sc.nextInt();
                 sc.nextLine();
                
-                System.out.println("\nNombre del equipo: ");
+                System.out.println("\n> Nombre del equipo: ");
                 name = sc.nextLine();
                 
-                System.out.println("\nCiudad del equipo: ");
+                System.out.println("\n> Ciudad del equipo: ");
                 city = sc.nextLine();
                
                 myTeam.setId(Id);
@@ -68,23 +68,28 @@ public class TeamView {
                 
                 Controller.getController().controller.put(key, myTeam);
                 //System.out.println(Controller.getController().controller.get("001"));
-                System.out.println("\nEquipo agregado exitosamente.\nPresiona una tecla para volver al menú.");
+                System.out.println("\n* * * * * * * * * * * * * * * * ");
+                System.out.println("Equipo agregado exitosamente.\n* * * * * * * * * * * * * * * * \n\n>>> Presiona una tecla para volver al menú.");
                 sc.next();
                 TeamMenu();
                 break;
         
             case 2:
                 String keyToEliminate;
-                System.out.println("\nCódigo del equipo que desea eliminar: ");
+                System.out.println("\n------------------------------------");
+                System.out.println("Código del equipo que desea eliminar:\n------------------------------------\n>>> ");
                 keyToEliminate = sc.nextLine();
                 if (Controller.getController().controller.containsKey(keyToEliminate) == true) {
                     Controller.getController().controller.remove(keyToEliminate);
-                    System.out.println("\nEquipo eliminado exitosamente.\nPresiona una tecla para volver al menú.");
+                    System.out.println("\n* * * * * * * * * * * * * * * * ");
+                System.out.println("Equipo eliminado exitosamente.\n* * * * * * * * * * * * * * * * \n\n>>> Presiona una tecla para volver al menú.");
                 }
                 else {
-                    System.out.println("\nNo se ha creado ningún equipo con ese código.");
+                    System.out.println("\n:: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: ::");
+                    System.out.println("::  No se ha creado ningún equipo con ese código.  ::\n:: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: ::");
                 }
                 
+                System.out.println("\n>>> Presiona una tecla para volver al menú.");
                 sc.next();
                 TeamMenu();
                 break;

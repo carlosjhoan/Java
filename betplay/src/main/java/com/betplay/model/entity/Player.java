@@ -1,6 +1,5 @@
 package com.betplay.model.entity;
 
-import com.betplay.Controller;
 
 public class Player  extends Person{
 
