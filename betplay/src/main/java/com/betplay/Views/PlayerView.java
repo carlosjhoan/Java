@@ -50,12 +50,13 @@ public class PlayerView {
                 int age;
                 int dorsal;
                 String position;
-                String keyTeam;
+                String keyTeamAdd;
+                String keyTeamEliminate;
                 
                 
                 System.out.println("\n> Código del equipo al cual va a pertenecer: ");
-                keyTeam = sc.nextLine();
-                if (Controller.getController().controller.containsKey(keyTeam) == true) {
+                keyTeamAdd = sc.nextLine();
+                if (Controller.getController().controller.containsKey(keyTeamAdd) == true) {
                     System.out.println("\n> Id del jugador: ");
                     Id = sc.nextInt();
                     sc.nextLine();
@@ -82,7 +83,7 @@ public class PlayerView {
                     myPlayer.setAge(age);
                     myPlayer.setDorsal(dorsal);
                     myPlayer.setPosition(position);
-                    Controller.getController().controller.get(keyTeam).listPlayers.add(myPlayer);
+                    Controller.getController().controller.get(keyTeamAdd).listPlayers.add(myPlayer);
                     System.out.println("\n* * * * * * * * * * * * * * * * *");
                     System.out.println("Jugador agregado exitosamente.\n* * * * * * * * * * * * * * * * *\n\n>>> Presiona una tecla para volver al menú.");
                 }
@@ -90,17 +91,49 @@ public class PlayerView {
                 else {
                     System.out.println("\n:: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: ::");
                     System.out.println("::  No se ha creado ningún equipo con ese código.  ::\n:: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: ::");
+                    System.out.println("\n>>> Presiona una tecla para volver al menú.");
                 }
 
-                System.out.println("\n>>> Presiona una tecla para volver al menú.");
+                
                 sc.next();
                 PlayerMenu();
                 break;
         
             case 2:
-                System.out.println("\n>>> Eliminar Jugador");
-                System.out.println("\nJugador eliminado exitosamente.\nPresiona una tecla para volver al menú.");
-                sc.next();
+                boolean confirmation = false;
+                int indexEliminated = 0;
+                System.out.println("\n> Código del equipo del jugador: ");
+                keyTeamEliminate = sc.nextLine();
+                System.out.println("\n> Id del jugador: ");
+                Id = sc.nextInt();
+                sc.nextLine();
+                if (Controller.getController().controller.containsKey(keyTeamEliminate) == true) {
+                    for (Player player : Controller.getController().controller.get(keyTeamEliminate).listPlayers) {
+                        if (player.getId() == Id) {
+                            indexEliminated = Controller.getController().controller.get(keyTeamEliminate).listPlayers.indexOf(player);
+                            confirmation = true;
+                        }
+                    }
+
+                    if (confirmation == false) {
+                        System.out.println("\n:: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: ::");
+                        System.out.println("::  No se ha encontrado ningún jugador con ese Id.  ::\n:: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: ::");
+                        System.out.println("\n>>> Presiona una tecla para volver al menú.");
+                    }
+
+                    else{
+                        Controller.getController().controller.get(keyTeamEliminate).listPlayers.remove(indexEliminated);
+                        System.out.println("\n* * * * * * * * * * * * * * * * *");
+                        System.out.println("Jugador eliminado exitosamente.\n* * * * * * * * * * * * * * * * *\n\n>>> Presiona una tecla para volver al menú.");
+                    }
+                }
+                else {
+                    System.out.println("\n:: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: ::");
+                    System.out.println("::  No se ha creado ningún equipo con ese código.  ::\n:: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: ::");
+                    System.out.println("\n>>> Presiona una tecla para volver al menú.");
+                }
+
+
                 PlayerMenu();
                 break;
 
