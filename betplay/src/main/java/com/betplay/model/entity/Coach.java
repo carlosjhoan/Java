@@ -18,7 +18,7 @@ public class Coach extends Person{
     public int getIdFederation() {
         return idFederation;
     }
-    public void setExpYear(int idFederation) {
+    public void setIdFederation(int idFederation) {
         this.idFederation = idFederation;
     }
 }

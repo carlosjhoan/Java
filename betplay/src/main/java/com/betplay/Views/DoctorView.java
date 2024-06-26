@@ -106,10 +106,11 @@ public class DoctorView {
                 int indexEliminated = 0;
                 System.out.println("\n> Código del equipo del doctor: ");
                 keyTeamEliminate = sc.nextLine();
-                System.out.println("\n> Id del doctor: ");
-                Id = sc.nextInt();
-                sc.nextLine();
+               
                 if (Controller.getController().controller.containsKey(keyTeamEliminate) == true) {
+                    System.out.println("\n> Id del doctor: ");
+                    Id = sc.nextInt();
+                    sc.nextLine();
                     for (Doctor doctor : Controller.getController().controller.get(keyTeamEliminate).listDoctors) {
                         if (doctor.getId() == Id) {
                             indexEliminated = Controller.getController().controller.get(keyTeamEliminate).listDoctors.indexOf(doctor);
@@ -127,14 +128,17 @@ public class DoctorView {
                         Controller.getController().controller.get(keyTeamEliminate).listDoctors.remove(indexEliminated);
                         System.out.println("\n* * * * * * * * * * * * * * * * *");
                         System.out.println("Doctor eliminado exitosamente.\n* * * * * * * * * * * * * * * * *\n\n>>> Presiona una tecla para volver al menú.");
+                        
                     }
                 }
                 else {
                     System.out.println("\n:: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: ::");
                     System.out.println("::  No se ha creado ningún equipo con ese código.  ::\n:: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: ::");
                     System.out.println("\n>>> Presiona una tecla para volver al menú.");
+                    
                 }
 
+                sc.next();
                 DoctorMenu();
                 break;
 

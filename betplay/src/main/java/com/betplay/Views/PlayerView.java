@@ -104,10 +104,12 @@ public class PlayerView {
                 int indexEliminated = 0;
                 System.out.println("\n> Código del equipo del jugador: ");
                 keyTeamEliminate = sc.nextLine();
-                System.out.println("\n> Id del jugador: ");
-                Id = sc.nextInt();
-                sc.nextLine();
+                
+                
                 if (Controller.getController().controller.containsKey(keyTeamEliminate) == true) {
+                    System.out.println("\n> Id del jugador: ");
+                    Id = sc.nextInt();
+                    sc.nextLine();
                     for (Player player : Controller.getController().controller.get(keyTeamEliminate).listPlayers) {
                         if (player.getId() == Id) {
                             indexEliminated = Controller.getController().controller.get(keyTeamEliminate).listPlayers.indexOf(player);
@@ -133,7 +135,7 @@ public class PlayerView {
                     System.out.println("\n>>> Presiona una tecla para volver al menú.");
                 }
 
-
+                sc.next();
                 PlayerMenu();
                 break;
 
