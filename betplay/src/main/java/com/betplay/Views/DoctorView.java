@@ -19,7 +19,7 @@ public class DoctorView {
         boolean validator = true;
         int option = 0;
         System.out.println("\n\n_____________________");
-        System.out.println("\n   M É D I C O S");
+        System.out.println("\n    M É D I C O S");
         System.out.println("\n= = = = = = = = = = =\n\tMenú\n= = = = = = = = = = =");
         System.out.println("\n1. Agregar médico");
         System.out.println("\n2. Eliminar médico");
@@ -55,8 +55,9 @@ public class DoctorView {
                 String keyTeamAdd;
                 String keyTeamEliminate;
                 
-                
-                System.out.println("\n> Código del equipo al cual va a pertenecer: ");
+                System.out.println("\n------------------------------------------");
+                System.out.println("Código del equipo al cual va a pertenecer: ");
+                System.out.println("------------------------------------------\n>>>");
                 keyTeamAdd = sc.nextLine();
                 if (Controller.getController().controller.containsKey(keyTeamAdd) == true) {
                     System.out.println("\n> Id del doctor: ");
@@ -104,7 +105,9 @@ public class DoctorView {
             case 2:
                 boolean confirmation = false;
                 int indexEliminated = 0;
-                System.out.println("\n> Código del equipo del doctor: ");
+                System.out.println("\n-----------------------------");
+                System.out.println("Código del equipo del doctor: ");
+                System.out.println("-----------------------------\n>>>");
                 keyTeamEliminate = sc.nextLine();
                
                 if (Controller.getController().controller.containsKey(keyTeamEliminate) == true) {

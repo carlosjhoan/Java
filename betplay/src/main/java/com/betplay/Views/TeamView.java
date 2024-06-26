@@ -76,8 +76,8 @@ public class TeamView {
         
             case 2:
                 String keyToEliminate;
-                System.out.println("\n------------------------------------");
-                System.out.println("Código del equipo que desea eliminar:\n------------------------------------\n>>> ");
+                System.out.println("\n-------------------------------------");
+                System.out.println("Código del equipo que desea eliminar:\n-------------------------------------\n>>> ");
                 keyToEliminate = sc.nextLine();
                 if (Controller.getController().controller.containsKey(keyToEliminate) == true) {
                     Controller.getController().controller.remove(keyToEliminate);

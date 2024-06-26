@@ -53,8 +53,9 @@ public class PlayerView {
                 String keyTeamAdd;
                 String keyTeamEliminate;
                 
-                
-                System.out.println("\n> Código del equipo al cual va a pertenecer: ");
+                System.out.println("\n------------------------------------------");
+                System.out.println("Código del equipo al cual va a pertenecer: ");
+                System.out.println("------------------------------------------\n>>>");
                 keyTeamAdd = sc.nextLine();
                 if (Controller.getController().controller.containsKey(keyTeamAdd) == true) {
                     System.out.println("\n> Id del jugador: ");
@@ -102,7 +103,9 @@ public class PlayerView {
             case 2:
                 boolean confirmation = false;
                 int indexEliminated = 0;
-                System.out.println("\n> Código del equipo del jugador: ");
+                System.out.println("\n------------------------------");
+                System.out.println("Código del equipo del jugador: ");
+                System.out.println("------------------------------\n>>>");
                 keyTeamEliminate = sc.nextLine();
                 
                 

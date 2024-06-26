@@ -31,6 +31,7 @@ public class CoachView {
                 try {
                     System.out.println("\n¿Qué desea realizar?");
                     option = sc.nextInt();
+                    sc.nextLine();
                     validator = false;
                 }
 
@@ -53,8 +54,9 @@ public class CoachView {
                 String keyTeamAdd;
                 String keyTeamEliminate;
                 
-                
-                System.out.println("\n> Código del equipo al cual va a pertenecer: ");
+                System.out.println("\n------------------------------------------");
+                System.out.println("Código del equipo al cual va a pertenecer: ");
+                System.out.println("------------------------------------------\n>>>");
                 keyTeamAdd = sc.nextLine();
                 if (Controller.getController().controller.containsKey(keyTeamAdd) == true) {
                     System.out.println("\n> Id del coach: ");
@@ -96,7 +98,9 @@ public class CoachView {
             case 2:
                 boolean confirmation = false;
                 int indexEliminated = 0;
-                System.out.println("\n> Código del equipo del coach: ");
+                System.out.println("\n----------------------------");
+                System.out.println("Código del equipo del coach: ");
+                System.out.println("----------------------------\n>>>");
                 keyTeamEliminate = sc.nextLine();
                 
                 if (Controller.getController().controller.containsKey(keyTeamEliminate) == true) {
@@ -127,7 +131,7 @@ public class CoachView {
                     System.out.println("::  No se ha creado ningún equipo con ese código.  ::\n:: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: :: ::");
                     System.out.println("\n>>> Presiona una tecla para volver al menú.");
                 }
-                
+
                 sc.next();
                 CoachMenu();
                 break;
