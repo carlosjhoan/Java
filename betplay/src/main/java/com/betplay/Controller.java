@@ -7,7 +7,7 @@ import com.betplay.model.entity.Team;
 public class Controller {
     public final Hashtable<String, Team> controller;
 
-    private static final Controller INSTANCE = new Controller(); 
+    private static  Controller INSTANCE = new Controller(); 
 
    
 
