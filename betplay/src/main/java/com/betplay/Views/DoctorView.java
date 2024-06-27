@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 import com.betplay.Controller;
 import com.betplay.model.entity.Doctor;
-import com.betplay.model.entity.Player;
 
 public class DoctorView {
 
