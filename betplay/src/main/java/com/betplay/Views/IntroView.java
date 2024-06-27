@@ -62,6 +62,7 @@ public class IntroView {
 
             default:
                 System.out.println("\nCHAO!");
+                sc.close();
                 //Controller.getController().controller.remove("001");
                 /*System.out.println(Controller.getController().controller.get("001").listPlayers.get(0).getFirstName());
                 System.out.println(Controller.getController().controller.get("001").listPlayers.get(0).getLastName());
